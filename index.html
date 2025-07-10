@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Início | Livros Nacionais</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="logo"><h1>Livros Nacionais</h1></div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="autores.html">Autores</a></li>
+        <li><a href="generos.html">Gêneros</a></li>
+        <li><a href="recomendados.html">Recomendados</a></li>
+        <li><a href="classicos.html">Clássicos</a></li>
+        <li><a href="livros.html">Livros</a></li>
+        <li><a href="carrinho.html">Carrinho</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="conteudo">
+    <aside class="sidebar">
+      <h3>Pesquisa Rápida</h3>
+      <form>
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo">
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor">
+        <button type="submit">Procurar</button>
+      </form>
+    </aside>
+    <section class="principal">
+      <h2>Bem-vindo ao Livros Nacionais</h2>
+      <p>Uma vitrine com obras marcantes da literatura brasileira.</p>
+      <div class="lista-livros">
+        <a class="card-livro" href="livro.html?id=capitaes-da-areia">
+          <img src="img/capitais.jpg" alt="Capitães da Areia">
+          <div class="info">
+            <h4>Capitães da Areia</h4>
+            <p>Jorge Amado</p>
+            <span>R$ 39,90</span>
+          </div>
+        </a>
+        <a class="card-livro" href="livro.html?id=a-hora-da-estrela">
+          <img src="img/clarice.jpg" alt="A Hora da Estrela">
+          <div class="info">
+            <h4>A Hora da Estrela</h4>
+            <p>Clarice Lispector</p>
+            <span>R$ 29,90</span>
+          </div>
+        </a>
+        <a class="card-livro" href="livro.html?id=dom-casmurro">
+          <img src="img/dom-casmurro.jpg" alt="Dom Casmurro">
+          <div class="info">
+            <h4>Dom Casmurro</h4>
+            <p>Machado de Assis</p>
+            <span>R$ 34,90</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="rodape">
+    <p>&copy; 2025 Livros Nacionais. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

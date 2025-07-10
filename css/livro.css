@@ -1,0 +1,100 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f0ec;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.topo {
+  background-color: #5a2a2a;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul li a {
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.menu ul li a:hover {
+  background-color: #a64d4d;
+}
+
+.livro-detalhe {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.voltar {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #5a2a2a;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.conteudo {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo img {
+  max-width: 300px;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.info {
+  flex: 1;
+}
+
+.info h2 {
+  margin-top: 0;
+  color: #5a2a2a;
+}
+
+.info p {
+  margin: 10px 0;
+}
+
+.btn-comprar {
+  background-color: #5a2a2a;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.rodape {
+  background-color: #5a2a2a;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+}
