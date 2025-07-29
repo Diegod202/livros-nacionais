@@ -1,14 +1,19 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f1efea;
   color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
 .topo {
@@ -29,8 +34,6 @@ body {
   list-style: none;
   display: flex;
   gap: 10px;
-  padding: 0;
-  margin: 0;
 }
 
 .menu ul li a {
@@ -46,69 +49,42 @@ body {
   background-color: #8a3737;
 }
 
+/* Centralização dos livros */
 .conteudo {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  flex: 1;
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
-}
-
-.sidebar {
-  width: 260px;
-  background-color: #d7bebe;
+  justify-content: center;   /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+  text-align: center;
   padding: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
-.sidebar label {
-  display: block;
-  margin: 10px 0 5px;
-  font-size: 0.9rem;
-}
-
-.sidebar input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #999;
-}
-
-.sidebar button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 10px;
-  background-color: #521f1f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .principal h2 {
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 .principal p {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 1rem;
 }
 
 .lista-livros {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
+/* Cards maiores */
 .card-livro {
-  width: 220px;
+  width: 280px;
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 1px 6px rgba(0,0,0,0.1);
@@ -124,29 +100,30 @@ body {
 
 .card-livro img {
   width: 100%;
-  height: 280px;
+  height: 340px;
   object-fit: cover;
 }
 
 .card-livro .info {
-  padding: 12px;
+  padding: 16px;
   border-top: 4px solid #521f1f;
 }
 
 .card-livro .info h4 {
-  font-size: 1rem;
-  margin-bottom: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
 }
 
 .card-livro .info p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .card-livro .info span {
   font-weight: bold;
   color: #521f1f;
+  font-size: 1rem;
 }
 
 .rodape {
@@ -154,5 +131,4 @@ body {
   color: white;
   text-align: center;
   padding: 15px;
-  margin-top: 60px;
 }
