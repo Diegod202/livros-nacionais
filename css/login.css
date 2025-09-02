@@ -1,0 +1,141 @@
+/* ===== Login (página) ===== */
+:root {
+  --vinho: #521f1f;
+  --vinho-2: #8a3737;
+  --bg: #f1efea;
+  --fg: #333;
+  --muted: #555;
+  --border: #e2ddd3;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --err: #c62828;
+  --ok: #1b5e20;
+}
+
+/* mantém o fundo e a tipografia do site */
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); }
+
+/* centralização reaproveitando seu padrão */
+.conteudo {
+  flex: 1;
+  display: flex;
+  justify-content: center;   /* horizontal */
+  align-items: center;       /* vertical */
+  text-align: center;
+  padding: 20px;
+}
+
+/* área do login */
+.login-area {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* card do formulário (mesmo “peso” do card-livro) */
+.login-card {
+  width: min(680px, 92vw);
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 8px var(--shadow);
+  overflow: hidden;
+  text-align: left;
+}
+
+/* faixa superior vinho, como seus cards */
+.login-card .header {
+  padding: 18px 20px;
+  border-top: 4px solid var(--vinho);
+  background: #fff;
+}
+.login-card .header h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.6rem;
+}
+.login-card .header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* corpo do card */
+.login-card .body {
+  padding: 18px 20px 8px;
+}
+
+/* campos */
+.form-row { margin-bottom: 14px; text-align: left; }
+.form-row label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+.form-row input[type="email"],
+.form-row input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--fg);
+  font-size: 1rem;
+}
+.form-row input:focus {
+  outline: none;
+  border-color: var(--vinho-2);
+  box-shadow: 0 0 0 3px rgba(138, 55, 55, 0.15);
+}
+
+/* erros e sucesso */
+.error { color: var(--err); font-size: 0.92rem; margin-top: 6px; }
+.success { color: var(--ok); font-size: 1rem; margin-top: 8px; }
+.input-error { border-color: var(--err) !important; }
+
+/* ações */
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between; /* lembrar de mim à esquerda, botão à direita */
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.remember { display: inline-flex; gap: 8px; align-items: center; font-size: 0.98rem; }
+
+/* botões */
+.btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary { background: var(--vinho); color: #fff; }
+.btn-primary:hover { background: var(--vinho-2); }
+.btn-secondary { background: #fff; color: var(--vinho); border: 1px solid var(--vinho); }
+.btn-secondary:hover { background: #f7f2ee; }
+
+/* rodapé do card (links auxiliares) */
+.login-card .foot {
+  border-top: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+}
+
+/* responsivo leve */
+@media (max-width: 480px) {
+  .actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .btn { width: 100%; justify-content: center; }
+}

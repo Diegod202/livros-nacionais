@@ -1,0 +1,102 @@
+/* ===== Responsividade global (compatível com seu estilo) ===== */
+:root{
+  --vinho:#521f1f;
+  --vinho-2:#8a3737;
+  --bg:#f1efea;
+  --fg:#333;
+  --muted:#555;
+  --border:#e2ddd3;
+}
+
+/* Mídias fluidas */
+img, video, canvas { max-width: 100%; height: auto; }
+
+/* Tipografia fluida */
+h1 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+h2 { font-size: clamp(1.2rem, 2.2vw, 1.8rem); }
+p, li { font-size: clamp(0.95rem, 1.6vw, 1rem); }
+
+/* Conteúdo central: rolagem confortável no mobile */
+.conteudo {
+  padding: 20px;
+  align-items: flex-start; /* evita “amassar” o conteúdo em telas pequenas */
+}
+
+/* Grid fluido para livros */
+.lista-livros {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* Cards ocupam a coluna; sem largura fixa */
+.card-livro { width: 100%; max-width: 320px; margin-inline: auto; }
+
+/* Capa com proporção estável */
+.card-livro img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  height: auto;
+}
+
+/* Topo com espaçamento e quebra saudável */
+.topo { gap: 12px; }
+.menu ul { flex-wrap: wrap; }
+.menu ul li a { display: inline-block; }
+
+/* ===== Navegação móvel (hambúrguer CSS-only) ===== */
+.menu-btn {
+  display: none;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .conteudo { padding: 18px; }
+}
+
+@media (max-width: 768px) {
+  .logo h1 { font-size: 1.4rem; }
+  .topo { flex-direction: column; align-items: flex-start; }
+
+  .lista-livros {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .card-livro .info h4 { font-size: 1.1rem; }
+  .card-livro .info p,
+  .card-livro .info span { font-size: 0.98rem; }
+
+  /* botão hambúrguer aparece */
+  .menu-btn { display: inline-block; }
+
+  /* menu recolhido por padrão */
+  .menu { width: 100%; }
+  .menu ul {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  /* mostrar menu quando checkbox marcado */
+  #nav-toggle:checked ~ .menu ul { display: flex; }
+
+  /* links ocupam a largura toda (área de toque melhor) */
+  .menu ul li a { display: block; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .conteudo { padding: 16px 14px; }
+  .lista-livros {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+  }
+}
