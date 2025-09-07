@@ -1,48 +1,15 @@
+/* ===== Página: Autores =====
+   Depende do index.css para header/menu/rodapé.
+   Usa variáveis com fallback para funcionar isolado. */
 
+/* Base da página (apenas ajustes leves) */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f1efea;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg, #f1efea);
+  color: var(--fg, #333);
 }
 
-.topo {
-  background-color: #521f1f;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo h1 {
-  color: white;
-  font-size: 1.8rem;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul li a {
-  color: white;
-  padding: 10px 14px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.menu ul li a:hover,
-.menu ul li a.active {
-  background-color: #8a3737;
-}
-
+/* Área central da página de autores */
 .conteudo-autores {
   max-width: 1100px;
   margin: 40px auto;
@@ -52,10 +19,11 @@ body {
 .conteudo-autores h2 {
   margin-bottom: 30px;
   font-size: 1.6rem;
-  color: #521f1f;
+  color: var(--vinho, #521f1f);
   text-align: center;
 }
 
+/* Grid de cards dos autores */
 .grid-autores {
   display: flex;
   flex-wrap: wrap;
@@ -63,14 +31,19 @@ body {
   justify-content: center;
 }
 
+/* Card do autor */
 .card-autor {
-  background: white;
-  padding: 20px;
+  background: #fff;
   width: 280px;
-  border-radius: 8px;
+  padding: 20px;
+  border-radius: var(--radius, 8px);
   box-shadow: 0 1px 8px rgba(0,0,0,0.1);
   text-align: center;
+  border: 1px solid var(--border, #e2ddd3);
+  transition: transform .2s ease;
 }
+
+.card-autor:hover { transform: translateY(-3px); }
 
 .card-autor img {
   width: 100%;
@@ -78,22 +51,27 @@ body {
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 15px;
+  display: block;
 }
 
 .card-autor h3 {
   margin-bottom: 10px;
-  color: #521f1f;
+  color: var(--vinho, #521f1f);
+  font-size: 1.15rem;
 }
 
 .card-autor p {
   font-size: 0.95rem;
-  line-height: 1.4;
+  line-height: 1.45;
+  color: var(--muted, #555);
 }
 
-.rodape {
-  background-color: #521f1f;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
+/* Margem do rodapé da página (o estilo do rodapé vem do index.css) */
+.rodape { margin-top: 60px; }
+
+/* Responsivo leve */
+@media (max-width: 480px) {
+  .grid-autores { gap: 18px; }
+  .card-autor   { width: 92vw; max-width: 360px; }
+  .card-autor img { height: 220px; }
 }

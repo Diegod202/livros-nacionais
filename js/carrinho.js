@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `).join('');
 
-  // Botão remover
+  // Criei um botão remover
   document.querySelectorAll('.remover').forEach(btn => {
     btn.addEventListener('click', () => {
       const index = btn.getAttribute('data-index');
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Total
+  // Aqui mostra o Total
   const total = carrinho.reduce((soma, livro) => {
     return soma + parseFloat(livro.preco.replace('R$', '').replace(',', '.'));
   }, 0);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   listaCarrinho.appendChild(totalDiv);
 
-  // Botão finalizar compra
+  // Botão para finalizar compra
   document.getElementById('finalizar').addEventListener('click', () => {
     alert('✅ Compra finalizada com sucesso!');
     localStorage.removeItem('carrinho');

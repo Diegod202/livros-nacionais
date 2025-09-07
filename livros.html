@@ -1,28 +1,31 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Livros | Livros Nacionais</title>
 
-  <link rel="stylesheet" href="css/livros.css">
-   <link rel="stylesheet" href="css/responsive.css" />
- 
+  <!-- estilos globais (menu/rodapé/tema) -->
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- estilos desta página -->
+  <link rel="stylesheet" href="css/livros.css" />
+  <!-- responsivo por último -->
+  <link rel="stylesheet" href="css/responsive.css" />
+
   <script src="js/livros.js" defer></script>
 </head>
 <body>
   <header class="topo">
     <div class="logo"><h1>Livros Nacionais</h1></div>
-    <nav class="menu">
+    <nav class="menu" aria-label="Principal">
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="autores.html">Autores</a></li>
         <li><a href="generos.html">Gêneros</a></li>
         <li><a href="recomendados.html">Recomendados</a></li>
         <li><a href="classicos.html">Clássicos</a></li>
-        <li><a href="livros.html" class="active">Livros</a></li>
+        <li><a href="livros.html" class="active" aria-current="page">Livros</a></li>
         <li><a href="carrinho.html">Carrinho</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
@@ -35,7 +38,7 @@
     <h2>Livros Nacionais</h2>
 
     <div class="filtro-busca">
-      <input type="text" id="busca" placeholder="Buscar por título ou autor...">
+      <input type="search" id="busca" placeholder="Buscar por título ou autor…" aria-label="Buscar livros" />
     </div>
 
     <div class="grid-livros" id="lista-livros">

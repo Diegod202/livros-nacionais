@@ -1,102 +1,83 @@
-/* ===== Responsividade global (compatível com seu estilo) ===== */
-:root{
-  --vinho:#521f1f;
-  --vinho-2:#8a3737;
-  --bg:#f1efea;
-  --fg:#333;
-  --muted:#555;
-  --border:#e2ddd3;
-}
-
-/* Mídias fluidas */
-img, video, canvas { max-width: 100%; height: auto; }
-
-/* Tipografia fluida */
-h1 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
-h2 { font-size: clamp(1.2rem, 2.2vw, 1.8rem); }
-p, li { font-size: clamp(0.95rem, 1.6vw, 1rem); }
-
-/* Conteúdo central: rolagem confortável no mobile */
-.conteudo {
-  padding: 20px;
-  align-items: flex-start; /* evita “amassar” o conteúdo em telas pequenas */
-}
-
-/* Grid fluido para livros */
-.lista-livros {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  width: 100%;
-}
-
-/* Cards ocupam a coluna; sem largura fixa */
-.card-livro { width: 100%; max-width: 320px; margin-inline: auto; }
-
-/* Capa com proporção estável */
-.card-livro img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  height: auto;
-}
-
-/* Topo com espaçamento e quebra saudável */
-.topo { gap: 12px; }
-.menu ul { flex-wrap: wrap; }
-.menu ul li a { display: inline-block; }
-
-/* ===== Navegação móvel (hambúrguer CSS-only) ===== */
-.menu-btn {
-  display: none;
-  color: #fff;
-  font-size: 1.6rem;
-  padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+/* ====== Breakpoint: até 1024px ====== */
 @media (max-width: 1024px) {
-  .conteudo { padding: 18px; }
+  /* Header/Menu */
+  .topo { gap: 10px; padding: 12px 16px; }
+  .logo h1 { font-size: 1.6rem; }
+  .menu ul { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .menu a { padding: 8px 12px; }
+
+  /* Livros: cards um pouco menores */
+  .lista-livros { gap: 16px; }
+  .card-livro { width: 260px; }
+  .card-livro img { height: 300px; }
 }
 
+/* ====== Breakpoint: até 768px (tablet) ====== */
 @media (max-width: 768px) {
-  .logo h1 { font-size: 1.4rem; }
-  .topo { flex-direction: column; align-items: flex-start; }
-
-  .lista-livros {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-  }
-
-  .card-livro .info h4 { font-size: 1.1rem; }
-  .card-livro .info p,
-  .card-livro .info span { font-size: 0.98rem; }
-
-  /* botão hambúrguer aparece */
-  .menu-btn { display: inline-block; }
-
-  /* menu recolhido por padrão */
+  /* Header centralizado */
+  .topo { justify-content: center; }
+  .logo { width: 100%; text-align: center; }
   .menu { width: 100%; }
-  .menu ul {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 10px;
-  }
+  .menu ul { justify-content: center; }
 
-  /* mostrar menu quando checkbox marcado */
-  #nav-toggle:checked ~ .menu ul { display: flex; }
+  /* Conteúdos principais */
+  .conteudo { padding: 16px; }
 
-  /* links ocupam a largura toda (área de toque melhor) */
-  .menu ul li a { display: block; text-align: center; }
+  /* Livros */
+  .card-livro { width: 45vw; max-width: 300px; min-width: 240px; }
+  .card-livro img { height: 260px; }
+
+  /* Autores */
+  .conteudo-autores { margin: 28px auto; padding: 16px; }
+  .grid-autores { gap: 20px; }
+  .card-autor { width: 45vw; max-width: 320px; min-width: 240px; padding: 16px; }
+  .card-autor img { height: 220px; }
+
+  /* Gêneros */
+  .conteudo-generos { margin: 28px auto; padding: 16px; }
+  .grid-generos { gap: 20px; }
+  .card-genero { width: 45vw; max-width: 320px; min-width: 240px; padding: 16px; }
 }
 
-@media (max-width: 480px) {
-  .conteudo { padding: 16px 14px; }
-  .lista-livros {
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 14px;
-  }
+/* ====== Breakpoint: até 560px (celular) ====== */
+@media (max-width: 560px) {
+  /* Header/Menu empilhado e clicável confortavelmente */
+  .logo h1 { font-size: 1.4rem; }
+  .menu ul { gap: 6px; }
+  .menu a { padding: 8px 10px; font-size: .95rem; }
+
+  /* Livros em 1 coluna */
+  .lista-livros { gap: 14px; }
+  .card-livro { width: 100%; max-width: 420px; }
+  .card-livro img { height: 220px; }
+  .card-livro .info { padding: 14px; }
+
+  /* Autores em 1 coluna */
+  .grid-autores { gap: 16px; }
+  .card-autor { width: 100%; max-width: 420px; }
+  .card-autor img { height: 220px; }
+
+  /* Gêneros em 1 coluna */
+  .grid-generos { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .card-genero { width: 100%; max-width: 420px; margin: 0 auto; }
+}
+
+/* ====== Breakpoint: até 400px (celular pequeno) ====== */
+@media (max-width: 400px) {
+  .logo h1 { font-size: 1.25rem; }
+  .menu a { padding: 7px 9px; font-size: .9rem; }
+  .card-livro img,
+  .card-autor img { height: 200px; }
+  .card-autor, .card-genero { padding: 14px; }
+}
+
+/* ====== Páginas de Auth (login/cadastro) ====== */
+@media (max-width: 768px) {
+  .auth-area { padding: 16px; }
+  .card-form { width: 100%; max-width: 480px; margin: 0 auto; }
+}
+
+@media (max-width: 560px) {
+  .card-form .actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .card-form .btn { width: 100%; justify-content: center; }
 }

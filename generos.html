@@ -1,44 +1,79 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Gêneros | Livros Nacionais</title>
 
-  <link rel="stylesheet" href="css/generos.css">
-  <link rel="stylesheet" href="css/responsive.css" />  
+  <!-- estilos globais (menu/rodapé) -->
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- estilos desta página -->
+  <link rel="stylesheet" href="css/generos.css" />
+  <!-- responsivo (opcional) -->
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <header class="topo">
     <div class="logo"><h1>Livros Nacionais</h1></div>
-    <nav class="menu">
+    <nav class="menu" aria-label="Principal">
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="autores.html">Autores</a></li>
-        <li><a href="generos.html" class="active">Gêneros</a></li>
+        <li><a href="generos.html" class="active" aria-current="page">Gêneros</a></li>
         <li><a href="recomendados.html">Recomendados</a></li>
         <li><a href="classicos.html">Clássicos</a></li>
         <li><a href="livros.html">Livros</a></li>
         <li><a href="carrinho.html">Carrinho</a></li>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="login.html">Entrar</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="conteudo-generos">
     <h2>Gêneros Literários</h2>
+
     <div class="grid-generos">
-      <div class="card-genero"><h3>Romance</h3><p>Narrativas longas que exploram emoções e relações humanas.</p></div>
-      <div class="card-genero"><h3>Conto</h3><p>Histórias curtas com poucos personagens e uma trama marcante.</p></div>
-      <div class="card-genero"><h3>Crônica</h3><p>Relatos do cotidiano com tom leve, reflexivo ou humorado.</p></div>
-      <div class="card-genero"><h3>Poesia</h3><p>Textos líricos que expressam sentimentos com ritmo e linguagem poética.</p></div>
-      <div class="card-genero"><h3>Drama</h3><p>Histórias de conflitos intensos, geralmente escritas para o teatro.</p></div>
-      <div class="card-genero"><h3>Literatura Infantil</h3><p>Obras voltadas para crianças com linguagem acessível e temas lúdicos.</p></div>
-      <div class="card-genero"><h3>Fantasia</h3><p>Universos mágicos com criaturas fantásticas e elementos sobrenaturais.</p></div>
-      <div class="card-genero"><h3>Ficção Científica</h3><p>Histórias baseadas em ciência e tecnologia, muitas vezes futuristas.</p></div>
+      <div class="card-genero">
+        <h3>Romance</h3>
+        <p>Narrativas longas que exploram emoções e relações humanas.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Conto</h3>
+        <p>Histórias curtas com poucos personagens e uma trama marcante.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Crônica</h3>
+        <p>Relatos do cotidiano com tom leve, reflexivo ou humorado.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Poesia</h3>
+        <p>Textos líricos que expressam sentimentos com ritmo e linguagem poética.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Drama</h3>
+        <p>Histórias de conflitos intensos, geralmente escritas para o teatro.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Literatura Infantil</h3>
+        <p>Obras voltadas para crianças com linguagem acessível e temas lúdicos.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Fantasia</h3>
+        <p>Universos mágicos com criaturas fantásticas e elementos sobrenaturais.</p>
+      </div>
+
+      <div class="card-genero">
+        <h3>Ficção Científica</h3>
+        <p>Histórias baseadas em ciência e tecnologia, muitas vezes futuristas.</p>
+      </div>
     </div>
   </main>
 

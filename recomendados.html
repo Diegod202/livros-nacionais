@@ -1,23 +1,23 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Recomendados | Livros Nacionais</title>
-  <link rel="stylesheet" href="css/recomendados.css">
-  <link rel="stylesheet" href="css/responsive.css" />
 
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/recomendados.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <header class="topo">
     <div class="logo"><h1>Livros Nacionais</h1></div>
-    <nav class="menu">
+    <nav class="menu" aria-label="Principal">
       <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="autores.html">Autores</a></li>
         <li><a href="generos.html">Gêneros</a></li>
-        <li><a href="recomendados.html" class="active">Recomendados</a></li>
+        <li><a href="recomendados.html" class="active" aria-current="page">Recomendados</a></li>
         <li><a href="classicos.html">Clássicos</a></li>
         <li><a href="livros.html">Livros</a></li>
         <li><a href="carrinho.html">Carrinho</a></li>
@@ -30,10 +30,25 @@
 
   <main class="conteudo-padrao">
     <h2>Recomendações de Leitura</h2>
+
     <div class="grid-cards">
-      <a href="livro.html?id=macunaima" class="card"><h3>Macunaíma</h3><p>Uma rapsódia modernista cheia de crítica e brasilidade.</p></a>
-      <a href="livro.html?id=bras-cubas" class="card"><h3>Brás Cubas</h3><p>Uma visão irônica da sociedade através de um narrador defunto.</p></a>
-      <a href="livro.html?id=vidas-secas" class="card"><h3>Vidas Secas</h3><p>Drama nordestino sobre a seca e a vida no sertão.</p></a>
+      <a href="livro.html?id=macunaima" class="card">
+        <img class="card__thumb" src="img/livros/macunaima.jpg" alt="Capa de Macunaíma" loading="lazy" width="320" height="200">
+        <h3>Macunaíma</h3>
+        <p>Uma rapsódia modernista cheia de crítica e brasilidade.</p>
+      </a>
+
+      <a href="livro.html?id=bras-cubas" class="card">
+        <img class="card__thumb" src="img/livros/memorias-postumas.jpg" alt="Capa de Memórias Póstumas de Brás Cubas" loading="lazy" width="320" height="200">
+        <h3>Memórias Póstumas de Brás Cubas</h3>
+        <p>Olhar irônico sobre a sociedade através de um narrador defunto.</p>
+      </a>
+
+      <a href="livro.html?id=vidas-secas" class="card">
+        <img class="card__thumb" src="img/livros/vidas-secas.jpg" alt="Capa de Vidas Secas" loading="lazy" width="320" height="200">
+        <h3>Vidas Secas</h3>
+        <p>Drama nordestino sobre a seca e a vida no sertão.</p>
+      </a>
     </div>
   </main>
 

@@ -1,23 +1,31 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ===== Reset básico ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* ===== Variáveis do tema ===== */
+:root {
+  --vinho: #521f1f;
+  --vinho-2: #8a3737;
+  --bg: #f1efea;
+  --fg: #333;
+  --muted: #555;
+  --card: #fff;
+  --radius: 6px;
+  --shadow: rgba(0,0,0,.1);
 }
 
-html, body {
-  height: 100%;
-}
-
+/* ===== Base ===== */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f1efea;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--fg);
   display: flex;
   flex-direction: column;
 }
 
+/* ===== Header / Menu ===== */
 .topo {
-  background-color: #521f1f;
+  background-color: var(--vinho);
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
@@ -26,7 +34,7 @@ body {
 }
 
 .logo h1 {
-  color: white;
+  color: #fff;
   font-size: 1.8rem;
 }
 
@@ -36,25 +44,25 @@ body {
   gap: 10px;
 }
 
-.menu ul li a {
-  color: white;
+.menu a {
+  color: #fff;
   padding: 10px 14px;
   border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background .2s ease;
 }
 
-.menu ul li a:hover,
-.menu ul li a.active {
-  background-color: #8a3737;
-}
+/* hover/active/focus visível */
+.menu a:hover,
+.menu a.active { background-color: var(--vinho-2); }
+.menu a:focus { outline: 2px solid #fff; outline-offset: 2px; }
 
-/* Centralização dos livros */
+/* ===== Conteúdo central ===== */
 .conteudo {
   flex: 1;
   display: flex;
-  justify-content: center;   /* Centraliza horizontalmente */
-  align-items: center;       /* Centraliza verticalmente */
+  justify-content: center;   /* horizontal */
+  align-items: center;       /* vertical */
   text-align: center;
   padding: 20px;
 }
@@ -65,16 +73,10 @@ body {
   align-items: center;
 }
 
-.principal h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-}
+.principal h2 { margin-bottom: 10px; font-size: 1.8rem; }
+.principal p  { margin-bottom: 30px; font-size: 1rem; color: var(--muted); }
 
-.principal p {
-  margin-bottom: 30px;
-  font-size: 1rem;
-}
-
+/* ===== Lista de livros ===== */
 .lista-livros {
   display: flex;
   flex-wrap: wrap;
@@ -82,31 +84,31 @@ body {
   gap: 20px;
 }
 
-/* Cards maiores */
+/* Card do livro */
 .card-livro {
   width: 280px;
-  background-color: white;
-  border-radius: 6px;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 6px var(--shadow);
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform .2s ease;
   text-decoration: none;
   color: inherit;
 }
 
-.card-livro:hover {
-  transform: translateY(-4px);
-}
+.card-livro:hover { transform: translateY(-4px); }
 
 .card-livro img {
   width: 100%;
   height: 340px;
   object-fit: cover;
+  display: block;
 }
 
 .card-livro .info {
   padding: 16px;
-  border-top: 4px solid #521f1f;
+  border-top: 4px solid var(--vinho);
+  text-align: left;
 }
 
 .card-livro .info h4 {
@@ -116,19 +118,20 @@ body {
 
 .card-livro .info p {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
 .card-livro .info span {
   font-weight: bold;
-  color: #521f1f;
+  color: var(--vinho);
   font-size: 1rem;
 }
 
+/* ===== Rodapé ===== */
 .rodape {
-  background-color: #521f1f;
-  color: white;
+  background-color: var(--vinho);
+  color: #fff;
   text-align: center;
   padding: 15px;
 }

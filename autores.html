@@ -1,22 +1,24 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Autores | Livros Nacionais</title>
 
-
-  <link rel="stylesheet" href="css/autores.css">
-  <link rel="stylesheet" href="css/responsive.css" /> 
+  <!-- estilos globais (menu/rodapé etc.) -->
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- estilos específicos da página Autores -->
+  <link rel="stylesheet" href="css/autores.css" />
+  <!-- responsivo (seu arquivo) -->
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
   <header class="topo">
     <div class="logo"><h1>Livros Nacionais</h1></div>
-    <nav class="menu">
+    <nav class="menu" aria-label="Principal">
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="autores.html" class="active">Autores</a></li>
+        <li><a href="autores.html" class="active" aria-current="page">Autores</a></li>
         <li><a href="generos.html">Gêneros</a></li>
         <li><a href="recomendados.html">Recomendados</a></li>
         <li><a href="classicos.html">Clássicos</a></li>
@@ -31,39 +33,43 @@
 
   <main class="conteudo-autores">
     <h2>Autores Brasileiros</h2>
+
     <div class="grid-autores">
       <div class="card-autor">
-        <img src="img/autores/jorge-amado.png" alt="Jorge Amado">
+        <img src="img/autores/jorge-amado.png" alt="Jorge Amado" loading="lazy" width="280" height="280">
         <h3>Jorge Amado</h3>
         <p>Um dos autores mais populares do Brasil, escreveu <em>Gabriela, Cravo e Canela</em> e <em>Capitães da Areia</em>.</p>
       </div>
+
       <div class="card-autor">
-        <img src="img/autores/clarice.png" alt="Clarice Lispector">
+        <img src="img/autores/clarice.png" alt="Clarice Lispector" loading="lazy" width="280" height="280">
         <h3>Clarice Lispector</h3>
         <p>Reconhecida pela escrita introspectiva e existencial, autora de <em>A Hora da Estrela</em>.</p>
       </div>
+
       <div class="card-autor">
-        <img src="img/autores/machado.png" alt="Machado de Assis">
+        <img src="img/autores/machado.png" alt="Machado de Assis" loading="lazy" width="280" height="280">
         <h3>Machado de Assis</h3>
         <p>Um dos maiores nomes da literatura brasileira, criador de <em>Dom Casmurro</em> e <em>Memórias Póstumas de Brás Cubas</em>.</p>
       </div>
-    
+
       <div class="card-autor">
-        <img src="img/autores/cecilia.png" alt="Cecília Meireles">
+        <img src="img/autores/cecilia.png" alt="Cecília Meireles" loading="lazy" width="280" height="280">
         <h3>Cecília Meireles</h3>
         <p>Poetisa brasileira conhecida por sua sensibilidade e musicalidade, autora de <em>Romanceiro da Inconfidência</em>.</p>
       </div>
+
       <div class="card-autor">
-        <img src="img/autores/carlos.png" alt="Carlos Drummond de Andrade">
+        <img src="img/autores/carlos.png" alt="Carlos Drummond de Andrade" loading="lazy" width="280" height="280">
         <h3>Carlos Drummond de Andrade</h3>
         <p>Considerado um dos maiores poetas do Brasil, com poemas marcantes sobre o cotidiano e a existência.</p>
       </div>
+
       <div class="card-autor">
-        <img src="img/autores/lima-barreto.png" alt="Lima Barreto">
+        <img src="img/autores/lima-barreto.png" alt="Lima Barreto" loading="lazy" width="280" height="280">
         <h3>Lima Barreto</h3>
         <p>Autor de <em>Triste Fim de Policarpo Quaresma</em>, retratou as injustiças sociais do Brasil republicano.</p>
       </div>
-
     </div>
   </main>
 

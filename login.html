@@ -5,65 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login — Livros Nacionais</title>
 
+  <!-- estilos globais -->
   <link rel="stylesheet" href="css/index.css" />
-  <link rel="stylesheet" href="css/login.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-
+  <!-- css de auth (o mesmo do cadastro) -->
+  <link rel="stylesheet" href="css/cadastro.css" />
 </head>
 <body>
-  <header class="topo">
-    <div class="logo"><h1>Livros Nacionais</h1></div>
-    <nav class="menu" aria-label="Principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="livros.html">Livros</a></li>
-        <li><a href="autores.html">Autores</a></li>
-        <li><a href="favoritos.html">Favoritos</a></li>
-        <li><a href="carrinho.html">Carrinho</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-        <li><a class="active" href="login.html">Entrar</a></li>
-      </ul>
-    </nav>
-  </header>
 
   <main class="conteudo">
     <section class="auth-area">
-      <div class="card-form" aria-labelledby="login-titulo">
+      <div class="card-form" aria-labelledby="titulo-login">
         <div class="header">
-          <h2 id="login-titulo">Login</h2>
-          <p>Validação simulada no navegador.</p>
+          <h2 id="titulo-login">Entrar</h2>
+          <p>Digite seus dados para acessar sua conta.</p>
         </div>
 
         <div class="body">
           <form id="form-login" novalidate>
             <div class="form-row">
               <label for="lemail">E-mail</label>
-              <input id="lemail" name="email" type="email" required autocomplete="email" />
+              <input id="lemail" name="email" type="email" autocomplete="email" />
               <div class="error" id="lerr-email" hidden>Informe um e-mail válido.</div>
             </div>
 
             <div class="form-row">
               <label for="lsenha">Senha</label>
-              <input id="lsenha" name="senha" type="password" required minlength="6" autocomplete="current-password" />
-              <div class="error" id="lerr-senha" hidden>Informe sua senha (mín. 6).</div>
+              <input id="lsenha" name="senha" type="password" minlength="6" autocomplete="current-password" />
+              <div class="error" id="lerr-senha" hidden>Senha precisa ter no mínimo 6 caracteres.</div>
             </div>
 
-            <div class="actions" style="justify-content: space-between;">
-              <label class="remember">
-                <input id="lembrar" type="checkbox" />
-                Lembrar de mim
-              </label>
+            <div class="actions">
+              <a class="btn btn-secondary" href="cadastro.html">Criar conta</a>
               <button class="btn btn-primary" type="submit" id="btnEntrar">Entrar</button>
             </div>
 
-            <p class="success" id="l-ok" hidden></p>
+            <!-- mensagens de feedback -->
+            <p class="success" id="l-ok" hidden>Login realizado com sucesso!</p>
             <p class="error" id="l-fail" hidden>E-mail ou senha inválidos.</p>
           </form>
         </div>
 
         <div class="foot">
-          <span class="field-note">Não tem conta?</span>
-          <a class="btn btn-secondary" href="cadastro.html">Criar cadastro</a>
+          <span class="field-note">Esqueceu a senha? (não implementado)</span>
         </div>
       </div>
     </section>
@@ -73,6 +57,7 @@
     © 2025 Livros Nacionais — Todos os direitos reservados
   </footer>
 
-  <script type="module" src="js/login.js"></script>
+  <!-- js simples do login -->
+  <script src="js/login.js"></script>
 </body>
 </html>

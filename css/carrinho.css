@@ -1,143 +1,178 @@
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f1efea;
-  margin: 0;
-  padding: 0;
-  color: #333;
+/* ===== Reset + Tema ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+:root{
+  --vinho:#521f1f;
+  --vinho-2:#8a3737;
+  --bg:#f1efea;
+  --fg:#333;
+  --muted:#555;
+  --border:#e2ddd3;
+  --radius:8px;
+  --shadow:0 1px 8px rgba(0,0,0,.1);
 }
 
-.topo {
-  background-color: #521f1f;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* ===== Base ===== */
+body{
+  font-family:'Segoe UI', Arial, sans-serif;
+  background:var(--bg);
+  color:var(--fg);
+  display:flex;
+  flex-direction:column;
 }
 
-.logo h1 {
-  color: white;
-  font-size: 1.8rem;
+/* ===== Header/Menu (completo) ===== */
+.topo{
+  background:var(--vinho);
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.logo h1{ color:#fff; font-size:1.8rem; }
+
+.menu ul{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.menu a{
+  color:#fff;
+  padding:10px 14px;
+  border-radius:4px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.menu a:hover,
+.menu a.active{ background:var(--vinho-2); }
+.menu a:focus{ outline:2px solid #fff; outline-offset:2px; }
+
+/* ===== Conteúdo ===== */
+.conteudo{
+  width:100%;
+  max-width:960px;
+  margin:40px auto;
+  padding:20px;
+}
+.conteudo h2{
+  display:flex; align-items:center; gap:10px;
+  justify-content:flex-start;
+  color:var(--vinho);
+  font-size:1.8rem;
+  margin-bottom:16px;
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
+/* Mensagem de carrinho vazio */
+.msg-vazio{
+  text-align:center;
+  color:var(--muted);
+  margin:14px 0 6px;
 }
 
-.menu ul li a {
-  color: white;
-  padding: 10px 14px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s;
+/* Lista de itens */
+#lista-carrinho{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
 }
 
-.menu ul li a:hover,
-.menu ul li a.active {
-  background-color: #8a3737;
+/* ===== Card do item ===== */
+#lista-carrinho .card-livro{
+  display:flex; gap:16px; align-items:center;
+  width:100%;
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:4px solid var(--vinho);   /* detalhe vinho */
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow:var(--shadow);
 }
 
-.conteudo {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
+#lista-carrinho .card-livro img{
+  width:96px; height:132px; object-fit:cover; border-radius:6px; display:block;
 }
 
-.conteudo h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #521f1f;
+/* bloco de infos */
+#lista-carrinho .card-livro .info{
+  flex:1; min-width:0; text-align:left;
+}
+#lista-carrinho .card-livro .info h4{
+  margin:0 0 4px; font-size:1.06rem; color:var(--fg);
+}
+#lista-carrinho .card-livro .info p{
+  margin:2px 0; color:var(--muted); font-size:.95rem;
+}
+#lista-carrinho .card-livro .info .preco,
+#lista-carrinho .card-livro .info strong{
+  color:var(--vinho); font-weight:700;
 }
 
-#lista-carrinho {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* botão remover */
+#lista-carrinho .card-livro .remover{
+  background:var(--vinho-2); color:#fff; border:0;
+  padding:8px 12px; border-radius:999px; cursor:pointer; font-size:.95rem;
+  transition:background .2s ease;
+}
+#lista-carrinho .card-livro .remover:hover{ background:var(--vinho); }
+
+/* ===== Box de total / CTA ===== */
+.total-carrinho{
+  margin-top:20px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:16px 20px;
+
+  display:flex; align-items:center; justify-content:space-between;
+}
+.total-carrinho h3{
+  margin:0; font-size:1.2rem; color:var(--vinho);
+}
+.total-carrinho button{
+  background:var(--vinho); color:#fff; border:0;
+  padding:10px 18px; border-radius:8px; cursor:pointer; font-size:1rem;
+  transition:background .2s ease;
+}
+.total-carrinho button:hover{ background:var(--vinho-2); }
+
+/* ===== Rodapé (completo) ===== */
+.rodape{
+  background:var(--vinho);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
 }
 
-.card-livro {
-  display: flex;
-  gap: 20px;
-  background: white;
-  border-radius: 8px;
-  padding: 15px;
-  align-items: center;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.1);
+/* ===== Responsivo ===== */
+@media (max-width: 1024px){
+  .topo{ gap:10px; }
+  .menu ul{ justify-content:center; }
 }
-
-.card-livro img {
-  width: 100px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 6px;
+@media (max-width: 640px){
+  #lista-carrinho .card-livro{ align-items:flex-start; }
+  #lista-carrinho .card-livro img{ width:92px; height:128px; }
 }
+@media (max-width: 560px){
+  .logo h1{ font-size:1.4rem; }
+  .menu a{ padding:8px 10px; font-size:.95rem; }
 
-.card-livro .info {
-  flex: 1;
-}
+  .conteudo{ margin:28px auto; padding:16px; }
+  #lista-carrinho .card-livro{
+    flex-direction:column; align-items:stretch; gap:12px;
+  }
+  #lista-carrinho .card-livro img{
+    width:100%; height:200px; border-radius:6px;
+  }
+  #lista-carrinho .card-livro .remover{ align-self:flex-end; }
 
-.card-livro .info h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #521f1f;
-}
-
-.card-livro .info p {
-  margin: 4px 0;
-  color: #555;
-}
-
-.card-livro .info span {
-  font-weight: bold;
-  color: #333;
-}
-
-.card-livro .remover {
-  background: #8a3737;
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.card-livro .remover:hover {
-  background: #521f1f;
-}
-
-.total-carrinho {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.total-carrinho h3 {
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-  color: #521f1f;
-}
-
-.total-carrinho button {
-  background: #521f1f;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.total-carrinho button:hover {
-  background: #8a3737;
-}
-
-.rodape {
-  background-color: #521f1f;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  .total-carrinho{
+    flex-direction:column; gap:12px; align-items:stretch;
+  }
+  .total-carrinho h3{ text-align:center; }
+  .total-carrinho button{ width:100%; }
 }

@@ -1,70 +1,14 @@
+/* ===== Página: Livros (padrão de Autores) =====
+   Header/rodapé/menu vêm do index.css.
+   Variáveis com fallback para funcionar isolado. */
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f1efea;
-  margin: 0;
-  padding: 0;
-  color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg, #f1efea);
+  color: var(--fg, #333);
 }
 
-.topo {
-  background-color: #521f1f;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.logo h1 {
-  color: white;
-  font-size: 1.8rem;
-}
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-}
-
-.menu ul li a {
-  color: white;
-  padding: 10px 14px;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.menu ul li a:hover,
-.menu ul li a.active {
-  background-color: #8a3737;
-}
-
-/* --- Barra de pesquisa --- */
-.filtro-busca {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto 30px;
-}
-
-.filtro-busca input {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
-.filtro-busca input:focus {
-  border-color: #521f1f;
-}
-/* ------------------------- */
-
+/* Área central */
 .conteudo-livros {
   max-width: 1100px;
   margin: 40px auto;
@@ -74,53 +18,86 @@ body {
 .conteudo-livros h2 {
   margin-bottom: 30px;
   font-size: 1.6rem;
-  color: #521f1f;
+  color: var(--vinho, #521f1f);
   text-align: center;
 }
 
-.grid-livros {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
+/* Barra de busca (simples) */
+.filtro-busca {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+.filtro-busca input {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 14px;
+  border: 1px solid var(--border, #e2ddd3);
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+.filtro-busca input:focus {
+  border-color: var(--vinho, #521f1f);
+  box-shadow: 0 0 0 3px rgba(82,31,31,0.15);
 }
 
+/* Grid — igual ao de Autores (flex wrap) */
+.grid-livros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Card — mesmo tamanho do card-autor (280px) */
 .card-livro {
-  background: white;
-  border-radius: 8px;
+  background: #fff;
+  width: 280px;
+  padding: 0; /* img + bloco texto controlam o espaçamento */
+  border-radius: var(--radius, 8px);
   box-shadow: 0 1px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  border: 1px solid var(--border, #e2ddd3);
+  transition: transform .2s ease;
+}
+.card-livro:hover { transform: translateY(-3px); }
+
+/* Capa do livro */
+.card-livro img {
+  width: 100%;
+  height: 280px;            /* igual autores */
+  object-fit: cover;
   display: block;
 }
 
-.card-livro img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
+/* Bloco de info com faixa vinho no topo (como index) */
 .card-livro .info {
-  padding: 12px;
-  border-top: 4px solid #521f1f;
-  text-align: center;
+  padding: 14px 16px;
+  border-top: 4px solid var(--vinho, #521f1f);
+  text-align: left;         /* melhor leitura em listas maiores */
 }
 
 .card-livro .info h4 {
-  margin: 5px 0;
-  font-size: 1rem;
-  color: #521f1f;
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: var(--vinho, #521f1f);
 }
 
 .card-livro .info p {
-  font-size: 0.85rem;
-  color: #555;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted, #555);
 }
 
-.rodape {
-  background-color: #521f1f;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
+/* Espaço antes do rodapé */
+.rodape { margin-top: 60px; }
+
+/* Responsivo leve — mesmo padrão do autores.css */
+@media (max-width: 480px) {
+  .grid-livros { gap: 18px; }
+  .card-livro  { width: 92vw; max-width: 360px; }
+  .card-livro img { height: 220px; }
 }
