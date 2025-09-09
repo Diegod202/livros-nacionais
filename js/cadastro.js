@@ -1,4 +1,5 @@
-// cadastro.js (bem simples)
+
+
 
 document.getElementById("form-cadastro").addEventListener("submit", function(e){
   e.preventDefault();
